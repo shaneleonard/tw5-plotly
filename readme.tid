@@ -1,0 +1,12 @@
+title: $:/plugins/shaneleonard/plotly/readme
+
+This plugin is a port of the plotly functionality.
+
+!! Instructions
+
+Include a plotly.js plot in your Tiddler by using the `$plotly` widget:
+
+`<$plotly data="Name of JSON Data Tiddler"></$plotly>`
+
+The data tiddler must contain the JSON data to be passed as the second parameter
+to `Plotly.plot()`.

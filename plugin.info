@@ -1,0 +1,10 @@
+{
+    "title": "$:/plugins/shaneleonard/plotly",
+    "description": "Plotly.js graphing and visualization library brought to TW5.",
+    "author": "Shane Leonard",
+    "version": "0.0.1",
+    "core-version": ">=5.0.8",
+    "source": "https://github.com/shaneleonard/plotly-tw5",
+    "plugin-type": "plugin",
+    "list": "readme"
+}
