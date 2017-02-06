@@ -14,11 +14,8 @@ A widget for including Plotly charts in a Tiddlywiki.
 "use strict";
 
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
-if (!$tw.node) console.log("No node environment");
-else console.log("Node is defined");
 
 var Plotly = require("$:/plugins/shaneleonard/plotly/plotly-latest.js");
-console.log(Plotly);
 
 var PlotlyWidget = function(parseTreeNode,options) {
     this.initialise(parseTreeNode,options);
@@ -82,8 +79,16 @@ PlotlyWidget.prototype.execute = function() {
 Selectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering
 */
 PlotlyWidget.prototype.refresh = function(changedTiddlers) {
-    Plotly.Plots.resize(this.plotDiv);
-	return true;
+    var changedAttributes = this.computeAttributes();
+    if (changedAttributes)
+    {
+        Plotly.Plots.resize(this.plotDiv);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 };
 
 exports.plotly = PlotlyWidget;
